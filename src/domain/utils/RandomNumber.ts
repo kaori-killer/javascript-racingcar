@@ -1,0 +1,3 @@
+interface RandomNumber {
+  value(): number;
+}

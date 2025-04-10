@@ -1,6 +1,6 @@
-import Game from "./controller/Game.ts";
+import RacingGame from "./controller/RacingGame.ts";
 
-import Garage from "./models/Garage.ts";
+import Garage from "./domain/Garage.ts";
 
 import GarageStore from "./stores/GarageStore.ts";
 
@@ -10,7 +10,7 @@ import GarageStore from "./stores/GarageStore.ts";
 // 항상 예외를 잡고, 체이닝하고, 다시 던지세요.
 // 가장 최상위 수준에서 오직 한번만 복구하세요.
 try {
-  const game = new Game(new GarageStore(new Garage()));
+  const game = new RacingGame(new GarageStore(new Garage()));
   game.start();
 } catch (error) {
   throw new Error("오류가 발생했습니다.");

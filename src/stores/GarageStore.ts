@@ -1,7 +1,7 @@
 import Store from "./Store.ts";
 
-import Garage from "../models/Garage.ts";
-import Car from "../models/Car.ts";
+import Garage from "../domain/Garage.ts";
+import Car from "../domain/Car.ts";
 
 export type GarageStoreSnapshot = {
   cars: Car[];
@@ -25,6 +25,10 @@ export default class GarageStore extends Store<GarageStoreSnapshot> {
   addCar({ name, position }: { name: string; position: number }) {
     this.garage = this.garage.withCar({ name, position });
     this.takeSnapshot();
+  }
+
+  winnerNames(): string[] {
+    return this.garage.winnerNames();
   }
 
   protected takeSnapshot() {

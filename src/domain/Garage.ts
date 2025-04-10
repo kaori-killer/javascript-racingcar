@@ -1,5 +1,6 @@
 import Car from "./Car.ts";
 
+// with 적절한 네이밍인가?
 export default class Garage {
   readonly cars: Car[];
 
@@ -7,9 +8,7 @@ export default class Garage {
     this.cars = cars;
   }
 
-  // with 적절한 네이밍인가?
-  // new Car 이것도 의존성이 있는 건가?
-  withCar({ name, position }: { name: string; position: number }) {
+  withCar({ name, position }: { name: string; position: number }): Garage {
     const index = this.cars.findLastIndex((i) => i.name === name);
 
     return index < 0
@@ -17,13 +16,14 @@ export default class Garage {
       : this.withUpdatedCar({ index, change: position });
   }
 
+  // new Car 이것도 의존성이 있는 건가?
   private withInsertedCar({
     name,
     position,
   }: {
     name: string;
     position: number;
-  }) {
+  }): Garage {
     const car = new Car({ name, position });
 
     return new Garage({
@@ -31,7 +31,13 @@ export default class Garage {
     });
   }
 
-  private withUpdatedCar({ index, change }: { index: number; change: number }) {
+  private withUpdatedCar({
+    index,
+    change,
+  }: {
+    index: number;
+    change: number;
+  }): Garage {
     const car = this.cars[index];
 
     return new Garage({
@@ -40,5 +46,18 @@ export default class Garage {
         new Car({ ...car, position: car.position + change }),
       ],
     });
+  }
+
+  winnerNames() {
+    const maxPosition = Math.max(...this.cars.map((car) => car.position));
+    const winnerNames = [
+      ...new Set(
+        this.cars
+          .filter((car) => car.position === maxPosition)
+          .map((car) => car.name)
+      ),
+    ];
+
+    return winnerNames;
   }
 }
