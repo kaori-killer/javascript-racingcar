@@ -7,7 +7,7 @@ export type GarageStoreSnapshot = {
   cars: Car[];
 };
 
-// ❓ 추상 클래스 상속과 인터페이스를 둘다 받는 건 불가능할까?
+// ❓ 추상 클래스 상속과 인터페이스를 둘다 받는 건 불가능할까? 둘다 할 필요가 없을까?
 export default class GarageStore extends Store<GarageStoreSnapshot> {
   private garage: Garage;
 
