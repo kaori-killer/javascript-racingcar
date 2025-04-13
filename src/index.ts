@@ -1,8 +1,8 @@
 import RacingGame from "./controller/RacingGame.ts";
 
-import Garage from "./domain/Garage.ts";
-
 import GarageStore from "./stores/GarageStore.ts";
+
+import Garage from "./domain/Garage.ts";
 
 // 부 생성자 밖에서는 new를 사용하지 마세요.
 // 필요한 의존성을 객체가 직접 생성하는 대신 우리가 ctor을 통해 의존성을 주입합니다.
