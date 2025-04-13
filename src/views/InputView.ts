@@ -1,13 +1,11 @@
 import readLineAsync from "./utils/readLineAsync.ts";
 import LineEndingString from "./utils/LineEndingString.ts";
 
-// 상태를 다루지 않는데
-// class로 만들어야 할까? 객체 리터럴로 만들어야 할까?
-// 유틸리티 클래스를 구현할 경우에는 클래스의 인스턴스 생성을 막기 위해
+// 💡 상태를 다루지 않는다 class로 만들어야 할까? 객체 리터럴로 만들어야 할까?
+// 📚 class 유틸리티 클래스를 구현할 경우에는 클래스의 인스턴스 생성을 막기 위해
 // private ctor을 추가하는 것이 좋다.
-
-// static 사용 금지라고 했는데, 이 부분을 그러면 어떻게 개선할 수 있을까.
-// final 키워드 쓰려고 했는데 자바스크립트에는 없네.
+// ❓ static 사용 금지라고 했는데, 이 부분을 그러면 어떻게 개선할 수 있을까.
+// 💡 final 키워드 쓰려고 했는데 자바스크립트에는 없네.
 
 // 메시지 상수를 어떻게 처리해야 할까?
 export const InputView = {

@@ -1,6 +1,4 @@
-// 인터페이스와 추상 클래스를 병행하진 못할까?
-
-// abstract 클래스: 인스턴스 생성 불가
+// 💡 abstract 클래스: 인스턴스 생성 불가
 export default abstract class Store<SnapShot> {
   snapshot = {} as SnapShot;
 

@@ -1,11 +1,17 @@
 import Car from "./Car.ts";
 
-// with 적절한 네이밍인가?
+// ❓ with 적절한 네이밍인가?
 export default class Garage {
   readonly cars: Car[];
 
   constructor({ cars = [] }: { cars?: Car[] } = {}) {
     this.cars = cars;
+  }
+
+  init() {
+    return new Garage({
+      cars: [],
+    });
   }
 
   withCar({ name, position }: { name: string; position: number }): Garage {
@@ -16,7 +22,7 @@ export default class Garage {
       : this.withUpdatedCar({ index, change: position });
   }
 
-  // new Car 이것도 의존성이 있는 건가?
+  // ❓ new Car 이것도 의존성이 있는 건가?
   private withInsertedCar({
     name,
     position,
@@ -61,3 +67,5 @@ export default class Garage {
     return winnerNames;
   }
 }
+
+// ❗️ 자동차 이름이 중복되지 않는다.

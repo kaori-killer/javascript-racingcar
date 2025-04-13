@@ -1,7 +1,8 @@
 import Car from "../domain/Car.ts";
 
-// View는 멍청해야 한다.
-// printResult에 Car를 통채로 넘겨줄까? 아니면 구조분해할당을 할까?
+// 📚 View는 멍청해야 한다.
+// ❓ printResult에 Car를 통채로 넘겨줄까? 아니면 구조분해할당을 할까?
+// ❓ 상수처리는 어떻게 하는 게 좋을까?
 const OutputView = {
   printCarNames({ carNames }: { carNames: string[] }) {
     console.log(carNames.join(", "));
