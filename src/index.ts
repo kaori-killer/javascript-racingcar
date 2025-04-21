@@ -13,7 +13,8 @@ import Garage from "./domain/Garage.ts";
 
 async function main() {
   try {
-    const game = new RacingGame(new GarageStore(new Garage()));
+    const store = new GarageStore(new Garage());
+    const game = new RacingGame(store);
     await game.start();
   } catch (error) {
     throw new Error("죄송하지만 문제가 발생했습니다", { cause: error });
