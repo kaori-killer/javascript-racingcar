@@ -1,4 +1,4 @@
-import Car from "./Car.ts";
+import Car from "./Car";
 
 // ❓ with 적절한 네이밍인가?
 export default class Garage {
@@ -18,12 +18,12 @@ export default class Garage {
     const index = this.cars.findLastIndex((i) => i.name === name);
 
     return index < 0
-      ? this.withInsertedCar({ name, position })
-      : this.withUpdatedCar({ index, change: position });
+      ? this.withAppendedCar({ name, position })
+      : this.withMovedCar({ index, change: position });
   }
 
   // ❓ new Car 이것도 의존성이 있는 건가?
-  private withInsertedCar({
+  private withAppendedCar({
     name,
     position,
   }: {
@@ -37,7 +37,7 @@ export default class Garage {
     });
   }
 
-  private withUpdatedCar({
+  private withMovedCar({
     index,
     change,
   }: {
