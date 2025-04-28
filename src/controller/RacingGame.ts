@@ -24,7 +24,7 @@ export default class RacingGame {
 
   private async 자동차등록() {
     this.garageStore.init();
-    const carNames = await this.getCarNames();
+    const carNames = await RacingGame.getCarNames();
     OutputView.printCarNames({ carNames });
 
     this.garageStore.addCars({ carNames, position: 0 });
@@ -32,7 +32,7 @@ export default class RacingGame {
 
   // ❓ 도메인 로직을 어떻게 분리할 수 있을까?
   private async 자동차경주() {
-    const attemptCount = await this.getAttemptCount();
+    const attemptCount = await RacingGame.getAttemptCount();
     OutputView.printAttemptCount({ attemptCount });
 
     const { cars } = this.garageStore.snapshot;
@@ -55,12 +55,12 @@ export default class RacingGame {
   }
 
   // ❓ carNames.split(",") 어디서 처리하는 게 좋을까?
-  private async getCarNames() {
+  private static async getCarNames() {
     const input = await InputView.readCarNames();
     return input.split(",");
   }
 
-  private async getAttemptCount() {
+  private static async getAttemptCount() {
     const input = await InputView.readAttemptCount();
     return Number(input);
   }
