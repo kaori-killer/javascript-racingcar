@@ -1,4 +1,4 @@
-import RandomNumber from "./RandomNumber";
+import RandomNumber from "./types/RandomNumber";
 
 export default class DefaultRandomNumber implements RandomNumber {
   value() {
