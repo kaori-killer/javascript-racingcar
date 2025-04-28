@@ -20,7 +20,7 @@ export default class GarageStore implements Store<GarageStoreSnapshot> {
   }
 
   init() {
-    this.garage = this.garage.init();
+    this.garage = Garage.initial();
   }
 
   addCars({ carNames, position }: { carNames: string[]; position: number }) {
