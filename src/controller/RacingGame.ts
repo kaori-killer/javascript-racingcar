@@ -36,7 +36,7 @@ export default class RacingGame {
     OutputView.printAttemptCount({ attemptCount });
 
     const { cars } = this.garageStore.snapshot;
-    for (let i = 0; i < attemptCount; i++) {
+    for (let i = 0; i < attemptCount; i += 1) {
       cars.forEach((car) => {
         const position = new DefaultRandomNumber().value() >= 4 ? 1 : 0;
         this.garageStore.addCar({ name: car.name, position });
