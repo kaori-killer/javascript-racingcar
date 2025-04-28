@@ -1,7 +1,7 @@
-import Store from "./Store.ts";
+import Store from "./Store";
 
-import Garage from "../domain/Garage.ts";
-import Car from "../domain/Car.ts";
+import Garage from "../domain/Garage";
+import Car from "../domain/Car";
 
 // 💡 독립적인 인스턴스 생성하는 구문
 // super();

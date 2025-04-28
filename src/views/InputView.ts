@@ -1,5 +1,5 @@
-import readLineAsync from "./utils/readLineAsync.ts";
-import LineEndingString from "./utils/LineEndingString.ts";
+import readLineAsync from "./utils/readLineAsync";
+import LineEndingString from "./utils/LineEndingString";
 
 // 💡 상태를 다루지 않는다 class로 만들어야 할까? 객체 리터럴로 만들어야 할까?
 // 📚 class 유틸리티 클래스를 구현할 경우에는 클래스의 인스턴스 생성을 막기 위해
@@ -12,14 +12,14 @@ export const InputView = {
   async readCarNames(): Promise<string> {
     const input = await readLineAsync(
       new LineEndingString(
-        "경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분)."
-      ).toString()
+        "경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).",
+      ).toString(),
     );
     return input;
   },
   async readAttemptCount(): Promise<string> {
     const input = await readLineAsync(
-      new LineEndingString("시도할 횟수는 몇 회인가요?").toString()
+      new LineEndingString("시도할 횟수는 몇 회인가요?").toString(),
     );
     return input;
   },

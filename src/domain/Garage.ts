@@ -60,7 +60,7 @@ export default class Garage {
       ...new Set(
         this.cars
           .filter((car) => car.position === maxPosition)
-          .map((car) => car.name)
+          .map((car) => car.name),
       ),
     ];
 

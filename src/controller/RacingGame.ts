@@ -1,9 +1,9 @@
-import DefaultRandomNumber from "../domain/utils/DefaultRandomNumber.ts";
+import DefaultRandomNumber from "../domain/utils/DefaultRandomNumber";
 
-import GarageStore from "../stores/GarageStore.ts";
+import GarageStore from "../stores/GarageStore";
 
-import InputView from "../views/InputView.ts";
-import OutputView from "../views/OutputView.ts";
+import InputView from "../views/InputView";
+import OutputView from "../views/OutputView";
 
 // ❓ Controller 이름을 지를 때 고민해야 할 점은?
 // ❓ 자동차등록 함수에서 입력과 출력 그리고 저장까지 3가지 일을 하는 게 맞을까?

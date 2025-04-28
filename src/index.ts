@@ -1,8 +1,8 @@
-import RacingGame from "./controller/RacingGame.ts";
+import RacingGame from "./controller/RacingGame";
 
-import GarageStore from "./stores/GarageStore.ts";
+import GarageStore from "./stores/GarageStore";
 
-import Garage from "./domain/Garage.ts";
+import Garage from "./domain/Garage";
 
 // 📚 항상 예외를 체이닝하고 절대로 원래 예외를 무시하지 않는다.
 // 📚 예외를 잡은 즉시 새로운 예외를 던진다. (예외 체이닝)
