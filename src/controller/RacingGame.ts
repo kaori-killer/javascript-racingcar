@@ -38,8 +38,7 @@ export default class RacingGame {
     const { cars } = this.garageStore.snapshot;
     for (let i = 0; i < attemptCount; i += 1) {
       cars.forEach((car) => {
-        const position = new DefaultRandomNumber().value() >= 4 ? 1 : 0;
-        this.garageStore.addCar({ name: car.name, position });
+        this.garageStore.forWardCar(new DefaultRandomNumber().value(), car);
       });
     }
   }

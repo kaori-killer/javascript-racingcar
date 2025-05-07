@@ -27,6 +27,11 @@ export default class GarageStore implements Store<GarageStoreSnapshot> {
     carNames.forEach((name) => this.addCar({ name, position }));
   }
 
+  forWardCar(randomNumber: number, car: Car) {
+    const position = randomNumber >= 4 ? 1 : 0;
+    this.addCar({ name: car.name, position });
+  }
+
   addCar({ name, position }: { name: string; position: number }) {
     this.garage = this.garage.withCar({ name, position });
   }
