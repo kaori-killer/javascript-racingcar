@@ -13,6 +13,10 @@ export default class Car {
     this.name = name;
     this.position = position;
   }
+
+  equal(name: string) {
+    return this.name === name;
+  }
 }
 
 // 시도 횟수는 양의 정수이다.

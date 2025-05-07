@@ -15,7 +15,7 @@ export default class Garage {
   }
 
   withCar({ name, position }: { name: string; position: number }): Garage {
-    const index = this.cars.findLastIndex((i) => i.name === name);
+    const index = this.cars.findLastIndex((car) => car.equal(name));
 
     return index < 0
       ? this.withAppendedCar({ name, position })
