@@ -3,6 +3,8 @@ import Store from "./Store";
 import Garage from "../domain/Garage";
 import Car from "../domain/Car";
 
+import RandomNumber from "../domain/utils/types/RandomNumber";
+
 // 💡 독립적인 인스턴스 생성하는 구문
 // super();
 
@@ -27,8 +29,8 @@ export default class GarageStore implements Store<GarageStoreSnapshot> {
     carNames.forEach((name) => this.addCar({ name, position }));
   }
 
-  forWardCar(randomNumber: number, car: Car) {
-    const position = randomNumber >= 4 ? 1 : 0;
+  forWardCar(randomNumber: RandomNumber, car: Car) {
+    const position = randomNumber.value() >= 4 ? 1 : 0;
     this.addCar({ name: car.name, position });
   }
 
